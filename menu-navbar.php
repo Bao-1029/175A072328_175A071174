@@ -8,11 +8,11 @@
                         <div class="collapse navbar-collapse" id="showMenu">
                             <ul class="navbar-nav mx-auto main-nav">
                                 <li><a href="index.php" title="Home">Home</a></li>
-                                <li class="dropdown"><a href="#">Tin tức & thông báo</a>
+                                <li class="dropdown"><a href="index.php?category=all">Tin tức & thông báo</a>
                                     <div class="nav-sub">
                                         <ul class="dropdown-nav">
-                                            <li><a href="index.php?danhmuc=" title="">Tin tức</a></li>
-                                            <li><a href="index.php?danhmuc=" title="">Thông báo</a></li>
+                                            <li><a href="index.php?category=tintuc" title="">Tin tức</a></li>
+                                            <li><a href="index.php?category=thongbao" title="">Thông báo</a></li>
                                             <li><a href="#" title="">Tin Video</a></li>
                                         </ul>
                                     </div>

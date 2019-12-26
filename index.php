@@ -23,18 +23,23 @@
     </section>
 <?php
     // Switch redirect page
-        if(isset($_GET['danhmuc'])){
-            $danhmuc=$_GET['danhmuc'];
+        if(isset($_GET['category'])){
+            $danhmuc=$_GET['category'];
         } else {
             $danhmuc='';
         }
         switch($danhmuc) {
-            case "DMTT":
-                if(isset($_GET['baiviet'])){
-                    $baiviet=$_GET['baiviet'];
+            // Là danhmuc=tintuc hay thongbao đều chạy tiếp code 35. Bth chỉ cần danhmuc có giá trị là chạy nhưng vì có thể danhmuc k có trong CSDL nên cần viết rõ. Khi get giá trị biến danh mục sẽ kiểm tra xem có nằm trong các case này k. Không nằm trong thì về trang chủ. ví dụ có người nhập index.php?category=cotinhnhapngu. Nó sẽ đưa về trang home.php  
+            case "tintuc":
+            case "thongbao":
+            case "all":
+                if(isset($_GET['post'])){
+                    // Link điều kiện: index.php?category=cógiátrịnàođó&&post=cógiátrịnàođó (có cả 2 biến)
+                    // thì sẽ chạy chi tiết bài viết
                     include('detail-post.php');
+                    // index.php?category=tintuc&&post=1 === với link điều kiện
                 } else {
-                    $baiviet='';
+                    // Link: index.php?category=cógiátrịnàođó(k có biến post) thì sẽ chạy lít-pót
                     include('list-post.php');
                 }
             break;

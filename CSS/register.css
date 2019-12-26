@@ -1,18 +1,16 @@
-*[role="form"] {
-    max-width: 500px;
-    padding: 15px;
-    margin: 0 auto;
-    border-radius: 2px;
-    background-color: #7aa4db;
-}
-
-*[role="form"] h3 { 
-    font-family: 'Open Sans' , sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    color: #000000;
-    margin-top: 5%;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+.register-card{
+    height: 600px;
+			width: 400px;
+			margin-top: 150px;
+			margin-bottom: 50px;
+			background: #7aa4db;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
 }

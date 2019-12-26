@@ -5,6 +5,9 @@
     a{
         text-decoration: none;
     }
+    .has-error {
+        color: #F00;
+    }
     /*header-top*/
 
     .contact {

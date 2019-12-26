@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {                                //#1
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="Username">
+							<input type="text" name="" class="form-control input_user" value="" placeholder="Email">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {                                //#1
 				 	<button type="button" name="button" class="btn login_btn">Login</button>
            </div>
            <div class="d-flex justify-content-center mt-3 login_container">
-            <button type="button" name="button" class="btn login_btn">Register</button>
+            <button type="button" name="button" class="btn login_btn" onclick="window.location.href='register.php'">Register</button>
 				</div>
 					</form>
 				</div>	

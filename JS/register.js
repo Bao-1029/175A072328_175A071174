@@ -6,9 +6,12 @@ $(document).ready(function() {
         const password2 = $('#password2').val();
         if (!email || !password || !password2) {
             $('#error-register').text('Chưa nhập đầy đủ thông tin');
+            $('#error-register').addClass("has-error")
+
         }
         if (password != password2) {
             $('#error-register').text('Mật khẩu không trùng khớp');
+            $('#error-register').addClass("has-error")
         }
 
         if (email && password && password2 && password == password2) {
@@ -29,11 +32,10 @@ $(document).ready(function() {
 
                         if (response.code == 1) {
                             $('#error-register').text("email đã tồn tại")
-
+                            $('#error-register').addClass("has-error")
                         } else {
                             $('#error-register').text("sql lỗi")
-
-
+                            $('#error-register').addClass("has-error")
                         }
                     }
                 }

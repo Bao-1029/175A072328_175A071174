@@ -11,7 +11,6 @@ session_start();
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/all.css">
     <link rel="stylesheet" href="CSS/project_BN.css">
-    <link rel="stylesheet" href="CSS/register.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
@@ -22,6 +21,7 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="CSS/register.css">
 
     <!-- <script src="./JS/register.js"></script> -->
 </head>
@@ -33,20 +33,25 @@ session_start();
          <?php include 'menu-navbar.php'; ?>
 </section>
 <div class="container" >
-            <form class="form-horizontal" >
-                <h3>Register</h3>
-                <!-- <div class="form-group">              
-                    <label for="firstName" class="col-sm-6 control-label">First Name</label>
-                    <div class="col-sm-12">
-                        <input type="text" name="first_name" placeholder="First Name" class="form-control" autofocus  value="" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="lastName" class="col-sm-6 control-label">Last Name</label>
-                    <div class="col-sm-12">
-                        <input type="text" name="last_name" placeholder="Last Name" class="form-control" autofocus value="" />
-                    </div>
-                </div> -->
+<div class="d-flex justify-content-center h-100">
+            <form class="form-horizontal w-70" >
+                <div class="register-card"style=" height: 450px;
+			width: 400px;
+			margin-top: 100px;
+			margin-bottom: 50px;
+			background: #7aa4db;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+">
+                <h2 style="text-align: center;
+    color: white;">Register</h2>
                 <div class="form-group">
                     <label for="email" class="col-sm-6 control-label">Email</label>
                     <div class="col-sm-12">
@@ -67,9 +72,11 @@ session_start();
                 </div>
                 <span id="error-register"></span>
                  <!-- /.form-group -->
-                <button type="button" id="btn-register" class="btn btn-primary btn-block">Register</button>
-           
+                <button type="button" id="btn-register" class="btn btn-primary btn-block" style= "margin-top:20px; background-color:#4b0c9e">Register</button>
+                </div>
             </form> <!-- /form -->
+            </div>
+
         </div> <!-- ./container -->
 <footer>
            <?php include 'footer.php'; ?>

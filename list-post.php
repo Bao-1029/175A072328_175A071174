@@ -1,13 +1,19 @@
 <?php
-    if(isset($_GET['danhmuc'])){
-        $danhmuc=$_GET['danhmuc'];
+    if(isset($_GET['category'])){
+        $danhmuc=$_GET['category'];
+    } else {
+        $danhmuc= '';
     }
 ?>
 <div class="container">
     <div class="list-post">
         <div class="row">
             <?php 
-                            $sql = "SELECT * FROM baiviet BV, danhmucbaiviet DMBV WHERE BV.Madanhmuc = DMBV.Madanhmuc AND DMBV.Madanhmuc = '$danhmuc' ";
+            if($danhmuc=="all") {
+                $sql = "SELECT * FROM posts";
+            } else {
+                $sql = "SELECT * FROM posts WHERE category = '$danhmuc'";
+            }
                             $req=mysqli_query($conn, $sql);
                                 while($row=mysqli_fetch_array($req)) {
                     ?>
@@ -18,10 +24,10 @@
                 </div>
                 <div class="col-lg-7">
                     <div style="padding:30px 0px">
-                        <h4><?= $row['Tieude']; ?></h4>
-                        <p class="description"><?= $row['Motabaiviet']; ?></p>
+                        <h4><?= $row['title']; ?></h4>
+                        <p class="description"><?= $row['description']; ?></p>
                         <br>
-                        <a href="index.php?danhmuc=<?= $row['Madanhmuc']; ?>&&baiviet=<?= $row['Idbaiviet']; ?>"
+                        <a href="index.php?category=<?= $row['category']; ?>&&post=<?= $row['Id_Post']; ?>"
                             style="float:right; text-decoration: none;"> Xem chi tiết</a>
                         <br>
                     </div>
