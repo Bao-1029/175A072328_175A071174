@@ -1,0 +1,297 @@
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    /*header-top*/
+
+    .contact {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .contact a {
+        white-space: nowrap;
+    }
+
+    .contact a:hover {
+        text-decoration: none;
+    }
+
+    .contact span{
+        font-size: 14px;
+        color: #000;
+        vertical-align: middle;
+    }
+    
+    .search-top {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgb(182, 177, 177);
+    }
+
+    .search-top a {
+        font-size: 14px;
+    }
+    
+    .logo img {
+        padding: 20px 0px;
+    }
+    /* menu navbar*/
+    
+    .main-menu {
+        background-image: url("../img/bgr-slider.jpg");
+    }
+    
+    .logo img {
+        width: 75%;
+    }
+    
+    nav ul {
+        display: inline-flex;
+        flex-direction: row;
+    }
+
+    nav ul li {
+        list-style-type: none;
+    }
+    
+    nav ul li a{
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 14px;
+        color: #fff;
+        padding: 0 0.7rem;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    
+    nav ul li:hover {
+        background-color: #007cc9;
+    }
+    
+    nav ul li:hover a {
+        text-decoration: none;
+        color: #FFF;
+    }
+    
+    nav div#showMenu > ul>li:not(:first-child) {
+        border-left: 1px dotted #111;
+    }
+    
+    .nav-sub ul {
+        padding-inline-start: 0;
+    }
+
+    .nav-sub ul li a {
+        text-transform: none;
+    }
+    
+    .nav-sub ul li a::before {
+        content: "»";
+        margin-right: 0.5rem;
+    }
+    
+    .nav-sub ul li a:hover {
+        color: #00105fd5;
+        font-style: italic;
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        height: 45px;
+        font-family: Arial;
+    }
+    
+    .dropdown-nav {
+        position: absolute;
+        overflow: hidden;
+        top: 45px;
+        opacity: 0;
+        height: 0;
+        background-color: #007cc9;
+        box-shadow: 0 0.8rem 1.6rem;
+        flex-direction: column;
+        z-index: 1;
+        transition: ease-in-out 0.6s;
+    }
+    
+    .nav-sub {
+        height: 0;
+    }
+    
+    .dropdown:hover .nav-sub {
+        height: auto;
+    }
+    
+    .dropdown-nav a {
+        display: block;
+        font-size: 13px;
+        padding-left: 15px;
+    }
+    
+    .dropdown:hover .dropdown-nav {
+        max-width: 15rem;
+        min-width: 100%;
+        height: auto;
+        opacity: 1;
+    }
+    
+    .navbar {
+        padding: 0;
+    }
+    
+    .menu-toggle i {
+        font-size: 2.5rem;
+    }
+    
+    .menu-toggle i:hover {
+        font-size: 3rem;
+    }
+    
+    ul.navbar-nav {
+        line-height: 40px;
+    }
+
+    .nav-sub ul li {
+        line-height: 25px;
+    }
+    .nav-sub .dropdown-nav{
+        z-index: 9;
+    }
+    /*menu mid*/
+    
+    .menu-mid {
+        padding: 15px 0px;
+    }
+    
+    .content-menu-mid span a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .content-menu-mid span a:hover {
+        cursor: pointer;
+        color: #3498db;
+    }
+    
+    .menu-mid .content-menu-mid {
+        display: flex;
+        width: 100%;
+    }
+    
+    .menu-mid .content-menu-mid .small {
+        width: 14.2%;
+        text-align: center;
+    }
+    
+    .menu-mid .content-menu-mid .small .small-img {
+        width: 36px;
+        height: 25px;
+        margin: auto;
+    }
+    
+    .small-img img {
+        height: 100%;
+        width: 100%;
+    }
+    /* tuyển sinh */
+    
+    section .main .row img {
+        width: 100%;
+        height: 55%;
+    }
+    
+    .title-content:hover {
+        cursor: pointer;
+        color: #3498db;
+    }
+    /* đào tạo */
+    
+    section .main h2, .student h2 {
+        padding-top: 15px;
+        text-transform: uppercase;
+        color: #001373;
+        font-size: 25px;
+    }
+
+    ul.news {
+        padding-inline-start: 20px;
+    }
+    
+    .news a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+    }
+    
+    .news a:hover {
+        cursor: pointer;
+        color: #3498db;
+    }
+    /* Sinh viên */
+    
+    .student {
+        background-color: #EFEFEF;
+    }
+    /*footer*/
+    
+    footer .footer-top .icon-footer {
+        margin-top: 5px;
+    }
+    
+    footer .footer-top .icon-footer span {
+        border: 1px solid #004EAF;
+        color: #fff;
+        background: #004EAF;
+        border-radius: 50%;
+        padding: 5px 8px;
+    }
+    
+    footer .footer-top {
+        background: #004EAF;
+        padding: 25px 0px 0;
+    }
+
+    .address {
+        color: #fff;
+        font-size: 14px;
+    }
+    
+    footer .footer-top .logo-bottom {
+        color: white;
+    }
+    
+    .logo-bottom h3 {
+        font-size: 15px;
+        vertical-align: middle;
+    }
+    
+    footer .footer-bottom {
+        padding: 15px;
+        background: #004EAF;
+        color: white;
+    }
+    .co-lg-3 img{
+        width: 100%;
+        height: 55%;
+    }
+
+    .icon-footer i {
+        color: #fff;
+        font-size: 20px;
+        padding: 0 10px 8px;
+        vertical-align: middle;
+    }
+
+/*
+    list-post
+*/
+
+.list-post p.description{
+    font-size: 14px;
+}
