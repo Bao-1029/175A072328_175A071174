@@ -1,4 +1,7 @@
-<?php require ('msql_connect.php'); ?>
+<?php 
+    session_start();
+    require ('msql_connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 

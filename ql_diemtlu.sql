@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 26, 2019 lúc 05:48 PM
+-- Thời gian đã tạo: Th12 27, 2019 lúc 11:36 AM
 -- Phiên bản máy phục vụ: 10.4.10-MariaDB
 -- Phiên bản PHP: 7.3.12
 
@@ -186,26 +186,33 @@ CREATE TABLE `taikhoan` (
   `MatKhau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `VaiTro` int(11) NOT NULL,
   `TrangThai` tinyint(1) NOT NULL DEFAULT 0,
-  `NgayTao` datetime NOT NULL DEFAULT current_timestamp()
+  `NgayTao` datetime NOT NULL DEFAULT current_timestamp(),
+  `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`Id_TaiKhoan`, `email`, `MatKhau`, `VaiTro`, `TrangThai`, `NgayTao`) VALUES
-(1, 'namhg@wru.vn', '123456', 1, 0, '2019-12-26 15:21:20'),
-(3, 'giangnam@gmail.com', '$2y$10$frR.7DVYqELRIMFtcl1TJebPV4easOeiDWAME8URZLIn3l1izaUHi', 0, 0, '2019-12-26 16:45:53'),
-(9, 'giangnam_cool@gmail.com', '$2y$10$l0P4E4l4OUd52D0BN3A/T.lU2CQj3eHSa0iExrLcPf2gDt2nxLuHW', 0, 0, '2019-12-26 16:58:02'),
-(10, 'giangnam_0cool@gmail.com', '$2y$10$yE8Vbul3KR40nT3tMq7pBu0ofGIFRxBuvq7xM3qC3wZUCsJ//FL3i', 0, 0, '2019-12-26 17:00:52'),
-(11, 'giangnam_1cool@gmail.com', '$2y$10$9BJ2K8OQhwgY93Blu49.gOaaQmb5nQ5GMSaKLv6sRgrE78E5JUFai', 0, 0, '2019-12-26 17:01:07'),
-(12, 'giangnam_1coool@gmail.com', '$2y$10$7nIlcvtHYOul1i93UpR10uGSsk5jhYN.phT.WoK0Bw5TdT94EOwRe', 0, 0, '2019-12-26 17:03:56'),
-(13, 'giangnam_1colool@gmail.com', '$2y$10$O0pZyhXcto7kk3hqZAFRj.dnGJDsB56Wd9cqoWVRContVUjYtWPw2', 0, 0, '2019-12-26 17:04:03'),
-(14, 'giangnam_1cololol@gmail.com', '$2y$10$3ozGSG51C7npEAB5I3El9Oxz6QtLtdGJWM57eN1NoMB1zFwRjMaSm', 0, 0, '2019-12-26 17:04:59'),
-(15, 'giangnam_1colokklol@gmail.com', '$2y$10$ukLQ/j8gQIBq7zWaoqEKIerQMJsqWYLZA4VLlC4Gn4YlSHy7ZKPyO', 0, 0, '2019-12-26 17:05:28'),
-(16, '0373528404', '$2y$10$ndDFFU8AHup94KYhQRb/z.OpkiI9g8uGxwuCTuQ4QSk8/HbHJF0NO', 0, 0, '2019-12-26 17:06:00'),
-(17, '0373528404uuu', '$2y$10$5hxP/PSE4plPc6lfmeX/nOjs0cD2yRGj3rSIartwZMVOwZ5wxu3Bi', 0, 0, '2019-12-26 17:06:27'),
-(18, 'baont@gmail.com', '$2y$10$sA1d.tFLxZG4MifiM2VibuDlYnK.SNQJyWRE/VGQG8.K82Xw6pZ1a', 0, 0, '2019-12-26 22:45:08');
+INSERT INTO `taikhoan` (`Id_TaiKhoan`, `email`, `MatKhau`, `VaiTro`, `TrangThai`, `NgayTao`, `username`) VALUES
+(1, 'namhg@wru.vn', '123456', 1, 0, '2019-12-26 15:21:20', ''),
+(3, 'giangnam@gmail.com', '$2y$10$frR.7DVYqELRIMFtcl1TJebPV4easOeiDWAME8URZLIn3l1izaUHi', 0, 0, '2019-12-26 16:45:53', ''),
+(9, 'giangnam_cool@gmail.com', '$2y$10$l0P4E4l4OUd52D0BN3A/T.lU2CQj3eHSa0iExrLcPf2gDt2nxLuHW', 0, 0, '2019-12-26 16:58:02', ''),
+(10, 'giangnam_0cool@gmail.com', '$2y$10$yE8Vbul3KR40nT3tMq7pBu0ofGIFRxBuvq7xM3qC3wZUCsJ//FL3i', 0, 0, '2019-12-26 17:00:52', ''),
+(11, 'giangnam_1cool@gmail.com', '$2y$10$9BJ2K8OQhwgY93Blu49.gOaaQmb5nQ5GMSaKLv6sRgrE78E5JUFai', 0, 0, '2019-12-26 17:01:07', ''),
+(12, 'giangnam_1coool@gmail.com', '$2y$10$7nIlcvtHYOul1i93UpR10uGSsk5jhYN.phT.WoK0Bw5TdT94EOwRe', 0, 0, '2019-12-26 17:03:56', ''),
+(13, 'giangnam_1colool@gmail.com', '$2y$10$O0pZyhXcto7kk3hqZAFRj.dnGJDsB56Wd9cqoWVRContVUjYtWPw2', 0, 0, '2019-12-26 17:04:03', ''),
+(14, 'giangnam_1cololol@gmail.com', '$2y$10$3ozGSG51C7npEAB5I3El9Oxz6QtLtdGJWM57eN1NoMB1zFwRjMaSm', 0, 0, '2019-12-26 17:04:59', ''),
+(15, 'giangnam_1colokklol@gmail.com', '$2y$10$ukLQ/j8gQIBq7zWaoqEKIerQMJsqWYLZA4VLlC4Gn4YlSHy7ZKPyO', 0, 0, '2019-12-26 17:05:28', ''),
+(16, '0373528404', '$2y$10$ndDFFU8AHup94KYhQRb/z.OpkiI9g8uGxwuCTuQ4QSk8/HbHJF0NO', 0, 0, '2019-12-26 17:06:00', ''),
+(17, '0373528404uuu', '$2y$10$5hxP/PSE4plPc6lfmeX/nOjs0cD2yRGj3rSIartwZMVOwZ5wxu3Bi', 0, 0, '2019-12-26 17:06:27', ''),
+(18, 'baont@gmail.com', '$2y$10$sA1d.tFLxZG4MifiM2VibuDlYnK.SNQJyWRE/VGQG8.K82Xw6pZ1a', 0, 0, '2019-12-26 22:45:08', ''),
+(19, 'baont6@gmail.com', '$2y$10$Z11fqgk9hCAcG76pM6qQYuqYiC8wKoxpwM1NiBxw.kDSN5Vt2OS8a', 0, 0, '2019-12-27 13:30:42', ''),
+(20, 'baont@demo.com', '$2y$10$eozaAEcaZrnJ.1NYJqrmX.rdMl/4eQF5hrfWQHlSYA8NAwZbOp7kC', 0, 0, '2019-12-27 13:31:11', ''),
+(21, 'baont7@demo.com', '$2y$10$E/5OfLNZ79zLqqtF.kHoX.MJUy9rznT9WeXMvE5wdK4hsF1qUXhSK', 0, 0, '2019-12-27 13:31:30', ''),
+(22, 'baont9@demo.com', '$2y$10$Jw083ylSIfNNbXAN3TTz4eAVwEE6DHwcGTqiXWrobCnHq/oJmA1gq', 0, 0, '2019-12-27 14:34:58', 'Bao2910'),
+(28, 'www@gmail.com', '$2y$10$V3MknaCQriw/9ycFgX8WbOuQmM5MwiHi9yRUSckdgvjm9NhhvNS36', 1, 0, '2019-12-27 15:59:22', 'Admin tạm'),
+(29, 'baont@gmail.com890', '$2y$10$NjlzAAbTicJ1X73e6fOyr.yGs.dIV0KD.zQ.fvoLS45hiHxnVZ1qu', 0, 0, '2019-12-27 17:15:05', 'qq');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -292,7 +299,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `Id_TaiKhoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `Id_TaiKhoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

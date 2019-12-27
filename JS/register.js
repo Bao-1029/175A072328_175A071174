@@ -4,7 +4,8 @@ $(document).ready(function() {
         const email = $('#email').val();
         const password = $('#password').val();
         const password2 = $('#password2').val();
-        if (!email || !password || !password2) {
+        const username = $('#username').val();
+        if (!username || !email || !password || !password2) {
             $('#error-register').text('Chưa nhập đầy đủ thông tin');
             $('#error-register').addClass("has-error")
 
@@ -14,14 +15,15 @@ $(document).ready(function() {
             $('#error-register').addClass("has-error")
         }
 
-        if (email && password && password2 && password == password2) {
+        if (username && email && password && password2 && password == password2) {
             $.ajax({
                 type: "POST",
                 url: "register-process.php",
                 data: {
                     email,
                     password,
-                    password2
+                    password2,
+                    username
                 },
                 dataType: "JSON",
                 success: function(response) {
@@ -29,9 +31,8 @@ $(document).ready(function() {
                         // $('#error-register').text("Đăng ký thành công")
                         window.location.href = "login.php";
                     } else {
-
                         if (response.code == 1) {
-                            $('#error-register').text("email đã tồn tại")
+                            $('#error-register').text("Email đã tồn tại")
                             $('#error-register').addClass("has-error")
                         } else {
                             $('#error-register').text("sql lỗi")

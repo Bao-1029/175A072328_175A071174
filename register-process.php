@@ -6,6 +6,7 @@
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
     $password2 = trim($_POST["password2"]);
+    $username = trim($_POST["username"]); 
     // SQL câu lệnh
     $sql = "SELECT * FROM taikhoan where email = '$email'";
     mysqli_set_charset($conn, 'UTF8');
@@ -18,7 +19,7 @@
         echo json_encode(["trangthai" => false, "code" => 1]);
     } else {
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql_register = "INSERT INTO taikhoan(email, MatKhau) VALUES('$email', '$password_hash')";
+            $sql_register = "INSERT INTO taikhoan(email, MatKhau, username) VALUES('$email', '$password_hash','$username')";
             $req = mysqli_query($conn, $sql_register);
             if($req) {
                 echo json_encode(["trangthai" => true]);

@@ -24,6 +24,19 @@
                     </div>
                     <div class="col-lg-3" style="text-align: right; width: 250px;text-decoration: none;">
                         <div class="search">
+                        <?php
+                         if(isset($_SESSION['email'])) {
+                            $email = $_SESSION['email'];
+                            $sql="SELECT * FROM taikhoan WHERE email = '$email'";
+                            $user=mysqli_query($conn, $sql);
+                            $row=mysqli_fetch_array($user);
+                            // <?=  chính là bằng <?php echo . Đó là viết tắt thôi
+                        ?>
+                            <div class="search-top">
+                                <span class="user-name"><?= $row['username'] ?></span>
+                                <a href="logout.php">Logout</a>
+                            </div>
+                         <?php } else { ?>
                             <div class="search-top">
                                 <a href="">(+)</a>
                                 <a href="login.php">Login</a>
@@ -31,6 +44,7 @@
                                 <a href=""><img src="img/vi.jpg" alt=""></a>
                                 <a href=""><img src="img/en.jpg" alt=""></a>
                             </div>
+                         <?php } ?>
                             <div class="input-group md-form form-sm form-2 pl-0">
                                 <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">

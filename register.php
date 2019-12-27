@@ -35,7 +35,7 @@ session_start();
 <div class="container" >
 <div class="d-flex justify-content-center h-100">
             <form class="form-horizontal w-70" >
-                <div class="register-card"style=" height: 450px;
+                <div class="register-card"style=" height: 500px;
 			width: 400px;
 			margin-top: 100px;
 			margin-bottom: 50px;
@@ -52,6 +52,12 @@ session_start();
 ">
                 <h2 style="text-align: center;
     color: white;">Register</h2>
+                <div class="form-group">
+                    <label for="username" class="col-sm-6 control-label">UserName</label>
+                    <div class="col-sm-12">
+                        <input type="username" name="username" id= "username" placeholder="Username" class="form-control" value=""  />
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-6 control-label">Email</label>
                     <div class="col-sm-12">
