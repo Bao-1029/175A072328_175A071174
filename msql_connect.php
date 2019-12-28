@@ -2,7 +2,7 @@
         DEFINE ('DB_USER', 'root'); // or whatever userid you created
         DEFINE ('DB_PASSWORD', ''); // or whatever password you created
         DEFINE ('DB_HOST', 'localhost');
-        DEFINE ('DB_NAME', 'ql_diemtlu');
+        DEFINE ('DB_NAME', 'test');
         
         // Make the connection:
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
