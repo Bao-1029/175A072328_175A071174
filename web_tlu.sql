@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2019 at 05:16 PM
+-- Generation Time: Dec 29, 2019 at 10:38 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.1.33
 
@@ -53,7 +53,7 @@ CREATE TABLE `giangvien` (
   `GioiTinh` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `NgaySinh` datetime NOT NULL,
   `DiaChi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Id_Khoa` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Id_Nganh` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Id_TaiKhoan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -202,7 +202,7 @@ ALTER TABLE `diem`
 --
 ALTER TABLE `giangvien`
   ADD PRIMARY KEY (`Id_GV`),
-  ADD KEY `Id_Khoa` (`Id_Khoa`),
+  ADD KEY `Id_Khoa` (`Id_Nganh`),
   ADD KEY `Id_TaiKhoan` (`Id_TaiKhoan`),
   ADD KEY `Email` (`Email`);
 
@@ -293,9 +293,9 @@ ALTER TABLE `diem`
 -- Constraints for table `giangvien`
 --
 ALTER TABLE `giangvien`
-  ADD CONSTRAINT `giangvien_ibfk_1` FOREIGN KEY (`Id_Khoa`) REFERENCES `nganhhoc` (`Id_NganhHoc`),
+  ADD CONSTRAINT `giangvien_ibfk_1` FOREIGN KEY (`Id_Nganh`) REFERENCES `nganhhoc` (`Id_NganhHoc`),
   ADD CONSTRAINT `giangvien_ibfk_2` FOREIGN KEY (`Id_TaiKhoan`) REFERENCES `taikhoan` (`Id_TaiKhoan`),
-  ADD CONSTRAINT `giangvien_ibfk_3` FOREIGN KEY (`Email`) REFERENCES `taikhoan` (`Email`);
+  ADD CONSTRAINT `giangvien_ibfk_3` FOREIGN KEY (`Email`) REFERENCES `taikhoan` (`email`);
 
 --
 -- Constraints for table `lop`
@@ -315,7 +315,7 @@ ALTER TABLE `monhoc`
 ALTER TABLE `sinhvien`
   ADD CONSTRAINT `sinhvien_ibfk_2` FOREIGN KEY (`Id_Lop`) REFERENCES `lop` (`Id_Lop`),
   ADD CONSTRAINT `sinhvien_ibfk_3` FOREIGN KEY (`Id_TaiKhoan`) REFERENCES `taikhoan` (`Id_TaiKhoan`),
-  ADD CONSTRAINT `sinhvien_ibfk_4` FOREIGN KEY (`Email`) REFERENCES `taikhoan` (`Email`);
+  ADD CONSTRAINT `sinhvien_ibfk_4` FOREIGN KEY (`Email`) REFERENCES `taikhoan` (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
