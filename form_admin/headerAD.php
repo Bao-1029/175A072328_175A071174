@@ -18,8 +18,9 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>WEB QLY TLU</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>WEB TLU</span></a>
                     </div>
+                    <div class="clearfix"></div>
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
@@ -30,16 +31,23 @@
                             <h2>Admin !</h2>
                         </div>
                     </div>
+                    <br />
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <h3>Giang Nam</h3>
                             <ul class="nav side-menu">
-                                <li><a href="DanhSachSinhVien.html"><i class="fas fa-fw fa-cog"></i> Quản Lý Sinh Viên &emsp;&emsp;&emsp;</a>
+                                <li><a href="DanhSachSinhVien.php"><i class="fas fa-fw fa-cog"></i> Quản Lý Sinh Viên &emsp;&emsp;&emsp;</a>
                                 </li>
-                                <li><a href="DanhSachGiangVien.html"><i class="fas fa-fw fa-cog"></i> Quản Lý Giảng Viên &emsp;&emsp;&emsp;</a>
+                                <li><a href="DanhSachGiangVien.php"><i class="fas fa-fw fa-cog"></i> Quản Lý Giảng Viên &emsp;&emsp;&emsp;</a>
                                 </li>
-                                <li><a href="DanhSachSinhVien.html"><i class="fas fa-fw fa-cog"></i> Quản Lý Chung &emsp;&emsp;&emsp;</a>
+                                <li><a href="QLNganh.php"><i class="fas fa-fw fa-cog"></i> Quản Lý Ngành Học &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="QLLop.php"><i class="fas fa-fw fa-cog"></i> Quản Lý Lớp Học &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="QLMonHoc.php"><i class="fas fa-fw fa-cog"></i> Quản Lý Môn Học &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="CapQuyen.php"><i class="fas fa-fw fa-cog"></i> Cấp Quyền &emsp;&emsp;&emsp;</a>
                                 </li>
                             </ul>
                         </div>
@@ -60,7 +68,6 @@
                             <span class="fas fa-sign-out-alt" aria-hidden="true"></span>
                         </a>
                     </div>
-                    <!-- /menu footer buttons -->
                 </div>
             </div>
 
@@ -74,7 +81,7 @@
                         <!-- bên trái -->
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                     <img src="img/1.jpg" alt="">Giang Nam
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
@@ -93,7 +100,7 @@
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                     <li>
                                         <a>
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="img/1.jpg" alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
                                             <span class="time">3 mins ago</span>
@@ -106,7 +113,7 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="img/1.jpg" alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
                                             <span class="time">3 mins ago</span>
@@ -119,7 +126,7 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="img/1.jpg" alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
                                             <span class="time">3 mins ago</span>
@@ -132,7 +139,7 @@
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="img/1.jpg" alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
                                             <span class="time">3 mins ago</span>
@@ -157,49 +164,3 @@
                     </nav>
                 </div>
             </div>
-            <!-- page content -->
-            <div class="right_col" role="main">
-                <div class="wrapper wrapper-content  animated fadeInRight">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="ibox ">
-                                <div class="ibox-content">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="block block-link-hover2 text-center" style="background: #c09853">
-                                                <div class="block-content block-content-full bg-primary-light">
-                                                    <br><br>
-                                                    <i class="fa fa-newspaper-o fa-5x text-white"></i>
-                                                    <br /><br /><br />
-                                                    <div class="text-white-op push-15-t" id='text'>WEBSITE QUẢN LÝ ĐIỂM TLU
-                                                    </div>
-                                                    <br /><br /><br />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END CONTENT-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /page content -->
-
-            <!-- footer content -->
-            <footer>
-                <div class="pull-right">
-                    Web Quản Lý Điểm Sinh Viên <a href="https://colorlib.com">TLU</a>
-                </div>
-                <div class="clearfix"></div>
-            </footer>
-            <!-- /footer content -->
-        </div>
-    </div>
-    <script src="./JS/jquery.min.js"></script>
-    <script src="./JS/bootstrap.min.js"></script>
-    <script src="./JS/custom.min.js"></script>
-</body>
-
-</html>

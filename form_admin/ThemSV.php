@@ -18,11 +18,9 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>WEB QLY TLU</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>WEB TLU</span></a>
                     </div>
-
                     <div class="clearfix"></div>
-
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
@@ -33,16 +31,23 @@
                             <h2>Admin !</h2>
                         </div>
                     </div>
-                    <!-- /menu profile quick info -->
-
                     <br />
-
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <h3>Giang Nam</h3>
                             <ul class="nav side-menu">
-                                <li><a><i class="fas fa-fw fa-cog"></i>Quản Lý Giảng Viên</a>
+                                <li><a href="DanhSachSinhVien.html"><i class="fas fa-fw fa-cog"></i> Quản Lý Sinh Viên &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="DanhSachGiangVien.html"><i class="fas fa-fw fa-cog"></i> Quản Lý Giảng Viên &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="QLNganh.html"><i class="fas fa-fw fa-cog"></i> Quản Lý Ngành Học &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="QLLop.html"><i class="fas fa-fw fa-cog"></i> Quản Lý Lớp Học &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="QLMonHoc.html"><i class="fas fa-fw fa-cog"></i> Quản Lý Môn Học &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="CapQuyen.html"><i class="fas fa-fw fa-cog"></i> Cấp Quyền &emsp;&emsp;&emsp;</a>
                                 </li>
                             </ul>
                         </div>
@@ -76,9 +81,6 @@
                         <!-- bên trái -->
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/img.jpg" alt="">Giang Nam
-                                    <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                                     <li><a href="javascript:;">Đổi mật khẩu</a></li>
@@ -89,7 +91,7 @@
 
                             <li role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
+                                    <i class="fas fa-envelope"></i>
                                     <span class="badge bg-green">6</span>
                                 </a>
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
@@ -97,48 +99,52 @@
                                         <a>
                                             <span class="image"><img src="img/1.jpg" alt="Profile Image" /></span>
                                             <span>
-                      <span>John Smith</span>
+                                                <span>John Smith</span>
                                             <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                      Film festivals used to be do-or-die moments for movie makers. They were where...
-                    </span>
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
+                                            </span>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
                                             <span class="image"><img src="img/1.jpg" alt="Profile Image" /></span>
                                             <span>
-                      <span>John Smith</span>
+                                                <span>John Smith</span>
                                             <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                      Film festivals used to be do-or-die moments for movie makers. They were where...
-                    </span>
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
+                                            </span>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
                                             <span class="image"><img src="img/1.jpg" alt="Profile Image" /></span>
                                             <span>
-                      <span>John Smith</span>
+                                                <span>John Smith</span>
                                             <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                      Film festivals used to be do-or-die moments for movie makers. They were where...
-                    </span>
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
+                                            </span>
                                         </a>
                                     </li>
                                     <li>
                                         <a>
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="img/1.jpg" alt="Profile Image" /></span>
                                             <span>
-                      <span>John Smith</span>
+                                                <span>John Smith</span>
                                             <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                      Film festivals used to be do-or-die moments for movie makers. They were where...
-                    </span>
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
+                                            </span>
                                         </a>
                                     </li>
                                     <li>
@@ -155,62 +161,75 @@
                     </nav>
                 </div>
             </div>
-            <!-- /top navigation -->
 
             <!-- page content -->
             <div class="right_col" role="main">
 
                 <div style="padding: 50px;">
                     <div class="x_title">
-                        <h2 style="font-size: 20px;font-weight: bold;" class="btn btn-success">Sửa thông tin giảng viên</h2>
+                        <h2 style="font-size: 20px;font-weight: bold;" class="btn btn-success">Thêm Sinh Viên</h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="col-md-12">
                         <form action="" method="post" class="form-horizontal form-label-left">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="username">Id Giảng Viên<span class="required">*</span></label>
+                                    <label class="control-label col-md-4" for="username">Id Sinh Viên<span
+                                            class="required">*</span></label>
                                     <div class="col-md-8">
                                         <input id="username" name="username" type="text" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="username">Email<span class="required">*</span></label>
+                                    <label class="control-label col-md-4" for="username">Email<span
+                                            class="required">*</span></label>
                                     <div class="col-md-8">
                                         <input id="username" name="username" type="text" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="password">Mật khẩu <span class="required">*</span></label>
+                                    <label class="control-label col-md-4" for="password">Mật khẩu <span
+                                            class="required">*</span></label>
                                     <div class="col-md-8">
                                         <input id="newpass" name="password" type="password" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="password">Nhập lại mật khẩu <span class="required">*</span></label>
+                                    <label class="control-label col-md-4" for="repassword">Nhập lại mật khẩu <span
+                                            class="required">*</span></label>
                                     <div class="col-md-8">
-                                        <input id="newpass" name="password" type="password" class="form-control" required="">
+                                        <input id="renewpass" name="repassword" type="password" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="quyen">Vai trò<span class="required">*</span></label>
+                                    <label class="control-label col-md-4" for="quyen">Vai trò<span
+                                            class="required">*</span></label>
                                     <div class="col-md-8">
                                         <select class="form-control" name="quyen">
-                    <option value="1">Admin</option>
-                    <option value="2">Đăng bài</option>
-                  </select>
+                                            <option value="1">Giảng Viên</option>
+                                            <option value="2">Sinh Viên</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="tencb">Họ<span class="required">*</span></label>
+                                    <label class="control-label col-md-4" for="tencb">Họ SV<span
+                                            class="required">*</span></label>
                                     <div class="col-md-8">
                                         <input id="tencb" name="tencb" type="text" class="form-control" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="tencb">Tên<span class="required">*</span></label>
+                                    <label class="control-label col-md-4" for="tencb">Tên SV<span
+                                            class="required">*</span></label>
+                                    <div class="col-md-8">
+                                        <input id="tencb" name="tencb" type="text" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4" for="tencb">CMT<span
+                                            class="required">*</span></label>
                                     <div class="col-md-8">
                                         <input id="tencb" name="tencb" type="text" class="form-control" required="">
                                     </div>
@@ -231,25 +250,21 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="tencb">Địa Chỉ<span class="required">*</span></label>
+                                    <label class="control-label col-md-4" for="tencb">Lớp<span
+                                            class="required">*</span></label>
                                     <div class="col-md-8">
                                         <input id="tencb" name="tencb" type="text" class="form-control" required="">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12 button-themcb" style="text-align: center; padding-top: 50px;">
-                                <button type="submit" class="btn btn-success themcb" value="them" name="themcanbo" onclick="checkmatkhau()">Lưu</button>
+                                <button type="submit" class="btn btn-success themcb" value="them" name="themcanbo" onclick="checkmatkhau()">Thêm</button>
                                 <button type="reset" class="btn btn-primary">Huỷ</button>
                             </div>
                         </form>
                     </div>
                 </div>
-
-
-
-
             </div>
-            <!-- /page content -->
 
             <!-- footer content -->
             <footer>
@@ -258,12 +273,11 @@
                 </div>
                 <div class="clearfix"></div>
             </footer>
-            <!-- /footer content -->
         </div>
     </div>
+
+
     <script src="./JS/jquery.min.js"></script>
     <script src="./JS/bootstrap.min.js"></script>
     <script src="./JS/custom.min.js"></script>
 </body>
-
-</html>
