@@ -9,7 +9,7 @@ require ('msql_connect.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tra cứu điểm sinh viên</title>
+    <title>Quản lí điểm học tập</title>
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/project_BN.css">
     <link rel="stylesheet" href="CSS/all.css">
@@ -21,16 +21,15 @@ require ('msql_connect.php');
     </header>
     <main>
         <div class="top-main"style="height: 50px; background-color: #7aa4db; text-align: center">
-            <div style="padding: 10px 0px;"><h3>Tra cứu điểm học tập:</h3> </div>
+            <div style="padding: 10px 0px;"><h3>Quản lý điểm học tập:</h3> </div>
        </div>
         <div class="container">
-           <form style="padding-top: 50px;">
+            <p style="padding-top: 40px;">Giảng viên:<h4>Nguyễn Văn A</h4></p>
+           <form style="padding-top: 20px;">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <label>Mã Sinh Viên :</label>
-                            <input type="" class="form-control" id="masinhvien" style="width: 70%">
-                        </div>
+                    
+                    <div class="col-lg-6 h-75">
+                        
                         <div class="input-group mb-3" style="width: 70%">
                             <div class="input-group-prepend">
                               <label class="input-group-text" for="inputGroupSelect01">Năm học:</label>
@@ -42,23 +41,30 @@ require ('msql_connect.php');
                               <option value="3">2019-2020</option>
                             </select>
                           </div>
-                          <div class="input-group mb-3" style="width: 70%">
+                        <div class="input-group mb-3" style="width: 70%">
                             <div class="input-group-prepend">
-                              <label class="input-group-text" for="inputGroupSelect01">Học kì:</label>
+                              <label class="input-group-text" for="inputGroupSelect01">Lớp học:</label>
                             </div>
                             <select class="custom-select" id="inputGroupSelect01">
                               <option selected>---</option>
-                              <option value="1">HKI-GĐ1</option>
-                              <option value="2">HKI-GĐ2</option>
-                              <option value="3">HKII-GĐ1</option>
+                              <option value="1">59TH1</option>
+                              <option value="2">59TH2</option>
+                              <option value="3">59TH3</option>
                             </select>
                           </div>
                     </div>
                         <div class="col-lg-6 h-75">
-                        <div class="form-group">
-                            <label>Số chứng minh thư: </label>
-                            <input type="" class="form-control" id="SCMT" style="width: 70%">
-                        </div>
+                              <div class="input-group mb-3" style="width: 70%">
+                                <div class="input-group-prepend">
+                                  <label class="input-group-text" for="inputGroupSelect01">Học kì:</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                  <option selected>---</option>
+                                  <option value="1">HKI-GĐ1</option>
+                                  <option value="2">HKI-GĐ2</option>
+                                  <option value="3">HKII-GĐ1</option>
+                                </select>
+                              </div>
                         <div class="input-group mb-3" style="width: 70%">
                             <div class="input-group-prepend">
                               <label class="input-group-text" for="inputGroupSelect01">Môn học:</label>
@@ -70,46 +76,72 @@ require ('msql_connect.php');
                               <option value="3">Thống kê ứng dụng</option>
                             </select>
                           </div>
-                          <button type="submit" class="btn btn-info" style="margin-left: 30%;">Tìm kiếm</button>
+                          <button type="submit" class="btn btn-info" style="margin: 5% 5%;">Tìm kiếm</button>
+                          <button type="submit" class="btn btn-info" style="margin: 5% 5%;">Lưu</button>
+                          <button type="submit" class="btn btn-info" style="margin: 5% 5%;">Xuất Excel</button>
                     </div>
                 </div>
             </form>
-            <div class="bottom-main" style="padding: 50px 0px;">
+            <div class="bottom-main" style="padding: 40px 0px;">
             <table class="table">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">Tên môn học</th>
-                    <th scope="col">Kỳ học</th>
-                    <th scope="col">Số tín chỉ</th>
+                    <th scope="col">Mã Sinh viên</th>
+                    <th scope="col">Tên Sinh viên</th>
                     <th scope="col">Điểm quá trình</th>
                     <th scope="col">Điểm thi</th>
                     <th scope="col">Điểm tổng kết</th>
+                    <th scope="col">Chức Năng</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Lý thuyết tính toán</td>
-                    <td>HK1</td>
-                    <td>3</td>
+                    <td>175A072328</td>
+                    <td>Nguyễn Thái Bảo</td>
                     <td>9</td>
                     <td>9</td>
                     <td>9</td>
+                    <td><a href="#">
+                        <i class="fas fa-edit"></i>
+                    </a> |
+                    <a href="#" onclick="return confirm('Bạn có muốn xóa không?');">
+                        <i class="fas fa-trash-alt"></i>
+                    </a> |
+                    <a href="#">
+                        <i class="fas fa-plus-square"></i>
+                    </a></td>
                   </tr>
                   <tr>
-                    <td>Thống kê ứng dụng</td>
-                    <td>HK1</td>
-                    <td>3</td>
+                    <td>175A071174</td>
+                    <td>Hoàng Giang Nam</td>
                     <td>9</td>
                     <td>9</td>
                     <td>9</td>
+                    <td><a href="#">
+                        <i class="fas fa-edit"></i>
+                    </a> |
+                    <a href="#" onclick="return confirm('Bạn có muốn xóa không?');">
+                        <i class="fas fa-trash-alt"></i>
+                    </a> |
+                    <a href="#">
+                        <i class="fas fa-plus-square"></i>
+                    </a></td>
                   </tr>
                   <tr>
-                    <td>Mạng máy tính</td>
-                    <td>HK1</td>
-                    <td>3</td>
-                    <td>8</td>
+                    <td>175A071449</td>
+                    <td>Nguyễn Văn Vượng</td>
                     <td>9</td>
-                    <td>8.5</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td><a href="#">
+                        <i class="fas fa-edit"></i>
+                    </a> |
+                    <a href="#" onclick="return confirm('Bạn có muốn xóa không?');">
+                        <i class="fas fa-trash-alt"></i>
+                    </a> |
+                    <a href="#">
+                        <i class="fas fa-plus-square"></i>
+                    </a></td>
                   </tr>
                 </tbody>
               </table>

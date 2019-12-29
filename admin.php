@@ -1,13 +1,6 @@
 <?php                                                                                     
 session_start();
-// Mình quy ước 1 là admin, 2 là sinh viên .....
-if (!isset($_SESSION['role'])) { 
-    // không có sesion thì ra trang chủ
-    header('Location: index.php');
-} else if(($_SESSION['role'] != 1)) {
-    // role k phải admin thì ra trang người dùng cá nhân thôi. Nếu có còn không thì trang chủ tất
-        header('Location: index.php');
-        }
+require ('msql_connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

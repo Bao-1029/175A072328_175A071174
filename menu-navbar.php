@@ -79,6 +79,7 @@
                                         </ul>
                                     </div>
                                 </li>
+                                
                                 <?php
                                 if(isset($_SESSION['email']) && isset($_SESSION['role'])
                                  && $_SESSION['role'] ==1) {
@@ -95,6 +96,15 @@
                                     <li class="dropdown"><a href="student.php" title="tradiem">Tra Cứu Điểm</a>
                                     </li>
                                 <?php } ?>
+                                <?php
+                                if(isset($_SESSION['email']) && isset($_SESSION['role'])
+                                 && $_SESSION['role'] ==2) {
+                                    // Nếu có session email thì check tiếp xem có session role không , có cả 2 session thì check tiếp xem role ==1 không. =1 thì mới hiện.
+                                ?>
+                                    <li class="dropdown"><a href="teacher.php" title="quanlidiem">Quản Lý Điểm</a>
+                                    </li>
+                                <?php } ?>
+                                
                             </ul>
                         
                         </div>
