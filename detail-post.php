@@ -11,8 +11,8 @@
         $post=mysqli_query($conn, $sql);
         $row=mysqli_fetch_array($post);
 ?>
-    <h4><?= $row['title']; ?></h4>
-    <p><?= $row['description']; ?></p>
+    <h4 style="text-align: center; color: #0984e3"><?= $row['title']; ?></h4>
+    <hr>
     <div><?= $row['content']; ?></div>
-    <h6>Tác giả : <?= $row['author']; ?></h6>
+    <h6 style="text-align: right;">Tác giả : <?= $row['author']; ?></h6>
 </div>

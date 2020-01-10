@@ -14,6 +14,7 @@
     $row = mysqli_fetch_assoc($result);
     if(password_verify($password,$row['MatKhau'])){
         $_SESSION['email'] = $row['email'];
+        $_SESSION['id'] = $row['Id_TaiKhoan'];
         $_SESSION['role'] = (int) $row['VaiTro']; // Lấy quyền để phân quyền chức năng. Sau if(role==1) thì cho vào admin còn không thì k cho vào
         echo "OK";
     }else{

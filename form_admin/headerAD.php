@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin</title>
+    <script src="./JS/jquery.min.js"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+    <script src="./JS/custom.min.js"></script>
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="./CSS/custom.min.css">
     <link rel="stylesheet" href="./CSS/style.css">
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+
 </head>
 
 <body class="nav-md">
@@ -18,7 +26,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>WEB TLU</span></a>
+                        <a href="../index.php" class="site_title"><i class="fa fa-paw"></i> <span>WEB TLU</span></a>
                     </div>
                     <div class="clearfix"></div>
                     <!-- menu profile quick info -->
@@ -47,7 +55,11 @@
                                 </li>
                                 <li><a href="QLMonHoc.php"><i class="fas fa-fw fa-cog"></i> Quản Lý Môn Học &emsp;&emsp;&emsp;</a>
                                 </li>
+                                <li><a href="QLTaiKhoan.php"><i class="fas fa-fw fa-cog"></i> Quản Lý Tài Khoản &emsp;&emsp;&emsp;</a>
+                                </li>
                                 <li><a href="CapQuyen.php"><i class="fas fa-fw fa-cog"></i> Cấp Quyền &emsp;&emsp;&emsp;</a>
+                                </li>
+                                <li><a href="FormPost.php"><i class="fas fa-fw fa-cog"></i> Quản Lý Bài Viết &emsp;&emsp;&emsp;</a>
                                 </li>
                             </ul>
                         </div>

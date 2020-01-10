@@ -19,7 +19,7 @@
                     ?>
             <div class="post-item d-flex flex-row">
                 <div class="col-lg-5">
-                    <img src="./img/thong-bao.png" alt="" style="width: 100%;
+                    <img src="<?= $row['picture']; ?>" alt="" style="width: 100%;
         max-height: 250px;padding-top:20px">
                 </div>
                 <div class="col-lg-7">
