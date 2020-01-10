@@ -13,6 +13,17 @@ require ('msql_connect.php');
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/project_BN.css">
     <link rel="stylesheet" href="CSS/all.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+
+
+    <script src="./JS/teacher.js"></script>
 </head>
 
 <body>
@@ -24,7 +35,14 @@ require ('msql_connect.php');
             <div style="padding: 10px 0px;"><h3>Quản lý điểm học tập:</h3> </div>
        </div>
         <div class="container">
-            <p style="padding-top: 40px;">Giảng viên:<h4>Nguyễn Văn A</h4></p>
+        <?php
+                                if(isset($_SESSION['email'])){
+                                  $email=$_SESSION['email'];
+                                  $sql1="SELECT GV.HoTen FROM giangvien GV , taikhoan TK Where TK.email=GV.email and TK.email='$email'";
+                                  $req=mysqli_query($conn, $sql1);
+                                  $row=mysqli_fetch_array($req)
+                                  ?>
+            <p style="padding-top: 40px;">Giảng viên:<h4><?= $row['HoTen']; ?></h4> <?php } ?></p>
            <form style="padding-top: 20px;">
                 <div class="row">
                     
@@ -34,22 +52,32 @@ require ('msql_connect.php');
                             <div class="input-group-prepend">
                               <label class="input-group-text" for="inputGroupSelect01">Năm học:</label>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                              <option selected>---</option>
-                              <option value="1">2017-2018</option>
-                              <option value="2">2018-2019</option>
-                              <option value="3">2019-2020</option>
+                            <select class="custom-select" id="NamHoc">
+                              <option>---</option>
+                              <?php 
+                            $sql = "SELECT distinct NamHoc FROM kyhoc ";
+                            $req= mysqli_query($conn, $sql);
+                                while($row=mysqli_fetch_array($req)) {
+                             ?>
+                              <option value=""><?= $row['NamHoc']; ?>
+                              <?php } ?>
+                              </option>  
                             </select>
                           </div>
                         <div class="input-group mb-3" style="width: 70%">
                             <div class="input-group-prepend">
                               <label class="input-group-text" for="inputGroupSelect01">Lớp học:</label>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                              <option selected>---</option>
-                              <option value="1">59TH1</option>
-                              <option value="2">59TH2</option>
-                              <option value="3">59TH3</option>
+                            <select class="custom-select" id="TenLop">
+                              <option>---</option>
+                              <?php 
+                            $sql = "SELECT * FROM lop ";
+                            $req= mysqli_query($conn, $sql);
+                                while($row=mysqli_fetch_array($req)) {
+                             ?>
+                              <option value=""><?= $row['TenLop']; ?>
+                              <?php } ?>
+                              </option>  
                             </select>
                           </div>
                     </div>
@@ -59,26 +87,36 @@ require ('msql_connect.php');
                                   <label class="input-group-text" for="inputGroupSelect01">Học kì:</label>
                                 </div>
                                 <select class="custom-select" id="inputGroupSelect01">
-                                  <option selected>---</option>
-                                  <option value="1">HKI-GĐ1</option>
-                                  <option value="2">HKI-GĐ2</option>
-                                  <option value="3">HKII-GĐ1</option>
+                                  <option>---</option>
+                                  <?php 
+                            $sql = "SELECT distinct HocKy FROM kyhoc ";
+                            $req= mysqli_query($conn, $sql);
+                                while($row=mysqli_fetch_array($req)) {
+                             ?>
+                              <option value=""><?= $row['HocKy']; ?>
+                              <?php } ?></option>
                                 </select>
                               </div>
                         <div class="input-group mb-3" style="width: 70%">
                             <div class="input-group-prepend">
                               <label class="input-group-text" for="inputGroupSelect01">Môn học:</label>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                              <option selected>---</option>
-                              <option value="1">Lí thyết tính toán</option>
-                              <option value="2">Công nghệ Web</option>
-                              <option value="3">Thống kê ứng dụng</option>
+                            <select class="custom-select" id="TenMH">
+                              <option>---</option>
+                              <?php 
+                            $sql = "SELECT * FROM monhoc ";
+                            $req= mysqli_query($conn, $sql);
+                                while($row=mysqli_fetch_array($req)) {
+                             ?>
+                              <option value=""><?= $row['TenMonHoc']; ?>
+                              <?php } ?></option>
                             </select>
+                            <span id='error-teacher'></span>
                           </div>
-                          <button type="submit" class="btn btn-info" style="margin: 5% 5%;">Tìm kiếm</button>
-                          <button type="submit" class="btn btn-info" style="margin: 5% 5%;">Lưu</button>
-                          <button type="submit" class="btn btn-info" style="margin: 5% 5%;">Xuất Excel</button>
+                         
+                          <button type="button" id="btn-timkiem" class="btn btn-info" style="margin: 5% 5%;">Tìm kiếm</button>
+                          <button type="button" class="btn btn-info" style="margin: 5% 5%;">Lưu</button>
+                          <button type="button" class="btn btn-info" style="margin: 5% 5%;">Xuất Excel</button>
                     </div>
                 </div>
             </form>
@@ -94,55 +132,8 @@ require ('msql_connect.php');
                     <th scope="col">Chức Năng</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>175A072328</td>
-                    <td>Nguyễn Thái Bảo</td>
-                    <td>9</td>
-                    <td>9</td>
-                    <td>9</td>
-                    <td><a href="#">
-                        <i class="fas fa-edit"></i>
-                    </a> |
-                    <a href="#" onclick="return confirm('Bạn có muốn xóa không?');">
-                        <i class="fas fa-trash-alt"></i>
-                    </a> |
-                    <a href="#">
-                        <i class="fas fa-plus-square"></i>
-                    </a></td>
-                  </tr>
-                  <tr>
-                    <td>175A071174</td>
-                    <td>Hoàng Giang Nam</td>
-                    <td>9</td>
-                    <td>9</td>
-                    <td>9</td>
-                    <td><a href="#">
-                        <i class="fas fa-edit"></i>
-                    </a> |
-                    <a href="#" onclick="return confirm('Bạn có muốn xóa không?');">
-                        <i class="fas fa-trash-alt"></i>
-                    </a> |
-                    <a href="#">
-                        <i class="fas fa-plus-square"></i>
-                    </a></td>
-                  </tr>
-                  <tr>
-                    <td>175A071449</td>
-                    <td>Nguyễn Văn Vượng</td>
-                    <td>9</td>
-                    <td>9</td>
-                    <td>9</td>
-                    <td><a href="#">
-                        <i class="fas fa-edit"></i>
-                    </a> |
-                    <a href="#" onclick="return confirm('Bạn có muốn xóa không?');">
-                        <i class="fas fa-trash-alt"></i>
-                    </a> |
-                    <a href="#">
-                        <i class="fas fa-plus-square"></i>
-                    </a></td>
-                  </tr>
+                <tbody id="data-teacher">
+                  
                 </tbody>
               </table>
               <a href="index.php" style="float:right">Trở về trang chủ!!!</a>
@@ -154,10 +145,7 @@ require ('msql_connect.php');
                 <h5>&copy; Thiết kế: Thái Bảo & Giang Nam</h5>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="JS/bootstrap.js.map"></script>
+
 </body>
 
 </html>

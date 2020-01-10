@@ -11,8 +11,17 @@ require ('msql_connect.php');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tra cứu điểm sinh viên</title>
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/project_BN.css">
     <link rel="stylesheet" href="CSS/all.css">
+    <link rel="stylesheet" href="CSS/project_BN.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="./JS/student.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +38,7 @@ require ('msql_connect.php');
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label>Mã Sinh Viên :</label>
-                            <input type="" class="form-control" id="masinhvien" style="width: 70%">
+                            <input type="" class="form-control" id="Masv" style="width: 70%">
                         </div>
                         <div class="input-group mb-3" style="width: 70%">
                             <div class="input-group-prepend">
@@ -37,10 +46,16 @@ require ('msql_connect.php');
                             </div>
                             <select class="custom-select" id="inputGroupSelect01">
                               <option selected>---</option>
-                              <option value="1">2017-2018</option>
-                              <option value="2">2018-2019</option>
-                              <option value="3">2019-2020</option>
+                              <?php 
+                            $sql = "SELECT * FROM kyhoc ";
+                            $req= mysqli_query($conn, $sql);
+                                while($row=mysqli_fetch_array($req)) {
+                             ?>
+                              <option value=""><?= $row['NamHoc']; ?>
+                              <?php } ?>
+                              </option>   
                             </select>
+                           
                           </div>
                           <div class="input-group mb-3" style="width: 70%">
                             <div class="input-group-prepend">
@@ -48,10 +63,15 @@ require ('msql_connect.php');
                             </div>
                             <select class="custom-select" id="inputGroupSelect01">
                               <option selected>---</option>
-                              <option value="1">HKI-GĐ1</option>
-                              <option value="2">HKI-GĐ2</option>
-                              <option value="3">HKII-GĐ1</option>
+                              <?php 
+                            $sql = "SELECT * FROM kyhoc ";
+                            $req= mysqli_query($conn, $sql);
+                                while($row=mysqli_fetch_array($req)) {
+                             ?>
+                              <option value=""><?= $row['HocKy']; ?>
+                              <?php } ?></option>
                             </select>
+                           
                           </div>
                     </div>
                         <div class="col-lg-6 h-75">
@@ -65,16 +85,30 @@ require ('msql_connect.php');
                             </div>
                             <select class="custom-select" id="inputGroupSelect01">
                               <option selected>---</option>
-                              <option value="1">Lí thyết tính toán</option>
-                              <option value="2">Công nghệ Web</option>
-                              <option value="3">Thống kê ứng dụng</option>
+                              <?php 
+                            $sql = "SELECT * FROM monhoc ";
+                            $req= mysqli_query($conn, $sql);
+                                while($row=mysqli_fetch_array($req)) {
+                             ?>
+                              <option value=""><?= $row['TenMonHoc']; ?>
+                              <?php } ?></option>
                             </select>
                           </div>
-                          <button type="submit" class="btn btn-info" style="margin-left: 30%;">Tìm kiếm</button>
+                          <span id='error-student'></span>
+                          <button type="button" id="btn-student" class="btn student_btn" style="margin-left: 30%; background-color: blue">Tìm kiếm</button>
                     </div>
                 </div>
+                <?php
+                                if(isset($_SESSION['email'])){
+                                  $email=$_SESSION['email'];
+                                  $sql1="SELECT SV.TenSV FROM sinhvien SV , taikhoan TK Where TK.email=SV.email and TK.email='$email'";
+                                  $req=mysqli_query($conn, $sql1);
+                                  $row=mysqli_fetch_array($req)
+                                  ?>
+             <h3 id='name-student'style="padding-top: 30px">Sinh viên: <?= $row['TenSV']; ?></h3>
+             <?php } ?>
             </form>
-            <div class="bottom-main" style="padding: 50px 0px;">
+            <div class="bottom-main" style="padding: 30px 0px;">
             <table class="table">
                 <thead class="thead-light">
                   <tr>
@@ -86,31 +120,26 @@ require ('msql_connect.php');
                     <th scope="col">Điểm tổng kết</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>Lý thuyết tính toán</td>
-                    <td>HK1</td>
-                    <td>3</td>
-                    <td>9</td>
-                    <td>9</td>
-                    <td>9</td>
-                  </tr>
-                  <tr>
-                    <td>Thống kê ứng dụng</td>
-                    <td>HK1</td>
-                    <td>3</td>
-                    <td>9</td>
-                    <td>9</td>
-                    <td>9</td>
-                  </tr>
-                  <tr>
-                    <td>Mạng máy tính</td>
-                    <td>HK1</td>
-                    <td>3</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>8.5</td>
-                  </tr>
+                <tbody id='dataStudent'>
+                  
+                  <?php
+                                if(isset($_SESSION['email'])){
+                                  $email=$_SESSION['email'];
+                                  $sql = "SELECT MH.TenMonHoc,KH.HocKy ,MH.SoTinChi, D.DiemQuaTrinh, D.DiemThi, D.DiemTongKet FROM monhoc MH, diem D, kyhoc KH, sinhvien SV, taikhoan TK WHERE KH.Id_KyHoc=MH.Id_KyHoc and MH.Id_MonHoc=D.Id_MonHoc and D.Id_SV=SV.Id_SV and TK.email=SV.email and TK.email='$email'";
+                                  $req=mysqli_query($conn, $sql);
+                                  while($row=mysqli_fetch_array($req)) {
+                             ?>
+                       <tr>         
+                    <td><?= $row['TenMonHoc']; ?></td>
+                    <td><?= $row['HocKy']; ?></td>
+                    <td><?= $row['SoTinChi']; ?></td>
+                    <td><?= $row['DiemQuaTrinh']; ?></td>
+                    <td><?= $row['DiemThi']; ?></td>
+                    <td><?= $row['DiemTongKet']; ?></td>
+                    </tr>
+                    <?php } }?>
+                  
+                 
                 </tbody>
               </table>
               <a href="index.php" style="float:right">Trở về trang chủ!!!</a>
@@ -122,10 +151,7 @@ require ('msql_connect.php');
                 <h5>&copy; Thiết kế: Thái Bảo & Giang Nam</h5>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="JS/bootstrap.js.map"></script>
+
 </body>
 
 </html>
